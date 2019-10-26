@@ -1,0 +1,73 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    char queuetype;
+    float num1, num2, num3;
+    char again = 'y';
+    char lunch;
+
+    while(again == 'y' || again == 'Y')
+    {
+
+
+
+    cout << "Please Note It doesn't calculate food collection" << endl;
+    // enter queue
+    cout << "enter queue type" << endl;
+    cout << "a) cafe / fast food" << endl;
+    cout << "b) amusement park" << endl;
+    cin >> queuetype;
+
+    cout << "Est. number of people in the queue" << endl;
+    cin >> num1;
+
+    switch(queuetype)
+    {
+    case 'a':
+    case 'A':
+        cout << "is it lunch period? (y/n)" << endl;
+        cin >> lunch;
+
+        switch(lunch)
+        {
+        case 'y':
+        case 'Y':
+            cout << (2.5)*num1*(0.75) << "mins" << endl;
+            break;
+
+        case 'n':
+        case 'N':
+            cout << (2.5)*num1*(0.9) << "mins" << endl;
+            break;
+
+        }
+        break;
+
+    case 'b':
+    case 'B':
+        cout << "Duration of ride?" << endl;
+        cin >> num2;
+        cout << "People allowed per ride?" << endl;
+        cin >> num3;
+        cout << round((num2*(num1/num3))+(0.4)) << "mins" << endl;
+        break;
+
+    default:
+        cout << "Incorrect input!" << endl;
+        break;
+
+
+    }
+
+
+    cout << "again? (y/n)?" << endl;
+    cin >> again;
+
+    }
+    cout << "Goodbye" << endl;
+    return 0;
+}
