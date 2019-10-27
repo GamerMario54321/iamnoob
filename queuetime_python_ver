@@ -1,0 +1,39 @@
+def main():
+
+    print("Please Note It doesn't calculate food collection")
+    print("a) cafe / fast food")
+    print("b) amusement park")
+    QT = input("Enter queue type :")
+
+
+    if(QT == "a" or QT == "A"):
+        print("Est. number of people in the queue")
+        num1 = int(input("How many? : "))
+        Lunch = input("is it lunch period? (y/n) : ")
+        
+        if(Lunch == "y" or Lunch == "Y"):
+            print(2.5 * num1 * 0.75, ' mins')
+            
+        elif(Lunch == "n" or Lunch == "N"):
+            print(2.5 * num1 * 0.9, ' mins')    
+            
+
+    elif(QT == "b" or QT == "B"):
+        print("Est. number of people in the queue")
+        num1 = int(input("How many? : "))
+        num2 = int(input("Duration of ride? (in mins) : "))
+        num3 = int(input("How many people allowed per ride? : "))
+        print(round(( num2 * ( num1 / num3 ) ) + 0.4 ), ' mins')
+        
+
+    else:
+        print("Wrong input detected")
+
+    restart = input("Would you like to use the estimater again? (y/n) : ")
+    if(restart == "y" or restart == "Y"):
+        main()
+
+    else:
+        exit()
+        
+main()
