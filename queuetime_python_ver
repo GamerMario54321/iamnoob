@@ -23,7 +23,10 @@ def main():
         num1 = int(input("How many? : "))
         num2 = int(input("Duration of ride? (in mins) : "))
         num3 = int(input("How many people allowed per ride? : "))
-        print(round(( num2 * ( num1 / num3 ) ) + 0.4 ), ' mins')
+        try:
+            print(round(( num2 * ( num1 / num3 ) ) + 0.4 ), ' mins')
+        except ZeroDivisionError:
+            print("At least one person must be allowed on right?.... right?")
         
 
     else:
