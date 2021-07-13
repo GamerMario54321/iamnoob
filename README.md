@@ -1,2 +1,1 @@
-my first project on github
-lul
+My first project made in 2019
